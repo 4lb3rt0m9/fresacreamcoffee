@@ -1,73 +1,60 @@
-# React + TypeScript + Vite
+# 🍓 Fresa Cream Café
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Sitio web para Fresa Cream Café, enfocado en la venta de fresas con crema, frappés y café, con pedidos personalizados enviados por WhatsApp.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Tecnologías
 
-## React Compiler
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- Git / GitHub
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Estructura de ramas
+Principales
+master → producción
+develop → integración y pruebas
+Temporales
+feature/* → nuevas funcionalidades
+fix/* → corrección de errores
+docs/* → documentación
+style/* → cambios visuales
+refactor/* → mejora de código
+chore/* → tareas técnicas
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Flujo de trabajo
+1. Actualizar develop
+git checkout develop
+git pull
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+2. Crear una rama
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+git checkout -b feature (otra)/nombre-del-cambio
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+3. Guardar cambios
+git add .
+git commit -m "tipo: descripción del cambio"
+git push origin nombre-de-la-rama
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+4. Integrar a develop
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+git checkout develop
+git pull
+git merge nombre-de-la-rama
+git push
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+5. Pasar a producción
+
+git checkout master
+git pull
+git merge develop
+git push
+
+6. Eliminar rama
+
+git branch -d nombre-de-la-rama
+git push origin --delete nombre-de-la-rama
