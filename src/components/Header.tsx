@@ -1,33 +1,24 @@
 export default function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-pink-100 bg-white/80 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-white/70 bg-white/55 backdrop-blur-2xl">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-        <div className="flex items-center gap-3">
-          <div className="grid h-11 w-11 place-items-center rounded-2xl bg-pink-500 text-2xl text-white">
-            🍓
-          </div>
-
-          <div>
-            <h1 className="text-xl font-black tracking-tight">
-              Fresa Cream <span className="text-pink-500">Café</span>
-            </h1>
-            <p className="text-xs font-medium text-zinc-500">
-              Café · Frappé · Fresas con crema
-            </p>
-          </div>
+        <div>
+          <h1 className="font-[Playfair_Display] text-2xl font-black tracking-tight">
+            Fresa Cream Café
+          </h1>
+          <p className="text-xs font-semibold tracking-[0.2em] text-[var(--coffee)]">
+            STRAWBERRIES · COFFEE · CREAM
+          </p>
         </div>
 
-        <div className="hidden items-center gap-8 font-semibold text-zinc-600 md:flex">
-          <a href="#menu" className="hover:text-pink-500">Menú</a>
-          <a href="#clientes" className="hover:text-pink-500">Opiniones</a>
-          <a href="#contacto" className="hover:text-pink-500">Contacto</a>
+        <div className="hidden items-center gap-7 text-sm font-black text-[var(--coffee)] md:flex">
+          <a href="#promos" className="hover:text-[var(--strawberry)]">Promos</a>
+          <a href="#productos" className="hover:text-[var(--strawberry)]">Productos</a>
+          <a href="#pedido" className="hover:text-[var(--strawberry)]">Pedir</a>
+          <a href="#ubicacion" className="hover:text-[var(--strawberry)]">Ubicación</a>
         </div>
 
-        <a
-          href="https://wa.me/521XXXXXXXXXX"
-          target="_blank"
-          className="rounded-full bg-pink-500 px-6 py-3 font-bold text-white hover:bg-pink-600"
-        >
+        <a href="#pedido" className="btn-primary !px-6 !py-3">
           Pedir
         </a>
       </nav>

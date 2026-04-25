@@ -1,1 +1,72 @@
 @import "tailwindcss";
+
+:root {
+  --cream: #f8f1ea;
+  --cream-2: #efe3d8;
+  --espresso: #221815;
+  --coffee: #6f5848;
+  --latte: #c8ad98;
+  --strawberry: #9f4f55;
+  --strawberry-soft: #d8a1a6;
+  --white-glass: rgba(255, 255, 255, 0.58);
+  --border-glass: rgba(255, 255, 255, 0.75);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at top left, rgba(216, 161, 166, 0.35), transparent 34%),
+    radial-gradient(circle at top right, rgba(200, 173, 152, 0.45), transparent 35%),
+    linear-gradient(135deg, var(--cream), var(--cream-2));
+  color: var(--espresso);
+  font-family: "Inter", sans-serif;
+}
+
+.glass-card {
+  background: var(--white-glass);
+  backdrop-filter: blur(28px);
+  border: 1px solid var(--border-glass);
+  border-radius: 2rem;
+  box-shadow: 0 30px 90px rgba(34, 24, 21, 0.12);
+  transition: all 0.35s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 40px 120px rgba(34, 24, 21, 0.18);
+}
+
+.btn-primary {
+  background: var(--espresso);
+  color: white;
+  border-radius: 999px;
+  font-weight: 900;
+  padding: 1rem 2rem;
+  box-shadow: 0 24px 60px rgba(34, 24, 21, 0.25);
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: var(--coffee);
+  transform: translateY(-3px);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.55);
+  color: var(--espresso);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(24px);
+  border-radius: 999px;
+  font-weight: 900;
+  padding: 1rem 2rem;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: white;
+  transform: translateY(-3px);
+}
