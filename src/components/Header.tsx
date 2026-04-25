@@ -17,10 +17,6 @@ export default function Header() {
           <a href="#pedido" className="hover:text-[var(--strawberry)]">Pedir</a>
           <a href="#ubicacion" className="hover:text-[var(--strawberry)]">Ubicación</a>
         </div>
-
-        <a href="#pedido" className="btn-primary !px-6 !py-3">
-          Pedir
-        </a>
       </nav>
     </header>
   )
